@@ -1,8 +1,5 @@
-import { snapshotEach } from "../../../src"
+import { snapshotEach } from "../../../src";
 
 describe("testBehaviors / shouldSupportInterfaces", () => {
-    
-    snapshotEach(async () => {
-
-    })
-})
+  snapshotEach(async () => {});
+});

@@ -2,7 +2,7 @@
 import { expect } from "chai";
 import { ethers } from "hardhat";
 
-const INTERFACES: {[key: string]: string[]} = {
+const INTERFACES: { [key: string]: string[] } = {
   ERC165: ["supportsInterface(bytes4)"],
   ERC721: [
     "balanceOf(address)",
@@ -42,14 +42,17 @@ for (const k of Object.getOwnPropertyNames(INTERFACES)) {
   }
 }
 
-export function shouldSupportInterfaces(interfaces: (keyof typeof INTERFACES)[], supportedButNotRegistered = false): void {
+export function shouldSupportInterfaces(
+  interfaces: (keyof typeof INTERFACES)[],
+  supportedButNotRegistered = false
+): void {
   describe("Contract interface", function () {
     beforeEach(function () {
       this.contractUnderTest = this.mock || this.token || this.holder || this.nft;
     });
 
     for (const interfaceName of interfaces) {
-      if(typeof interfaceName === "number") {
+      if (typeof interfaceName === "number") {
         throw new Error("interfaces should be strings");
       }
 
@@ -61,14 +64,15 @@ export function shouldSupportInterfaces(interfaces: (keyof typeof INTERFACES)[],
           });
 
           it(
-            (supportedButNotRegistered ? "does not claim support" : "claims support") + ` for ${interfaceName} (${interfaceId})`,
+            (supportedButNotRegistered ? "does not claim support" : "claims support") +
+              ` for ${interfaceName} (${interfaceId})`,
             async function () {
               if (supportedButNotRegistered) {
                 expect(await this.contractUnderTest.supportsInterface(interfaceId)).to.equal(false);
               } else {
                 expect(await this.contractUnderTest.supportsInterface(interfaceId)).to.equal(true);
               }
-            },
+            }
           );
         });
 
@@ -84,15 +88,13 @@ export function shouldSupportInterfaces(interfaces: (keyof typeof INTERFACES)[],
   });
 }
 
-function makeInterfaceId (functionSignatures: string[]): string {
+function makeInterfaceId(functionSignatures: string[]): string {
   const INTERFACE_ID_LENGTH = 4;
 
   const interfaceIdBuffer = functionSignatures
-    .map(signature => ethers.utils.keccak256(signature))
-    .map(h =>
-      Buffer
-        .from(h.substring(2), 'hex')
-        .slice(0, 4) // bytes4()
+    .map((signature) => ethers.utils.keccak256(signature))
+    .map(
+      (h) => Buffer.from(h.substring(2), "hex").slice(0, 4) // bytes4()
     )
     .reduce((memo, bytes) => {
       for (let i = 0; i < INTERFACE_ID_LENGTH; i++) {
@@ -101,5 +103,5 @@ function makeInterfaceId (functionSignatures: string[]): string {
       return memo;
     }, Buffer.alloc(INTERFACE_ID_LENGTH));
 
-  return `0x${interfaceIdBuffer.toString('hex')}`;
+  return `0x${interfaceIdBuffer.toString("hex")}`;
 }
