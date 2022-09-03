@@ -32,30 +32,31 @@ const INTERFACES: { [key: string]: string[] } = {
   ERC2981: ["royaltyInfo(uint256,uint256)"],
 };
 
-export const INTERFACE_IDS: any = {};
-const FN_SIGNATURES: any = {};
+export const INTERFACE_IDS: {[key: string]: string} = {};
 for (const k of Object.getOwnPropertyNames(INTERFACES)) {
   INTERFACE_IDS[k] = makeInterfaceId(INTERFACES[k]);
-  for (const fnName of INTERFACES[k]) {
-    // the interface id of a single function is equivalent to its function signature
-    FN_SIGNATURES[fnName] = makeInterfaceId([fnName]);
-  }
 }
 
 export function shouldSupportInterfaces(
-  interfaces: (keyof typeof INTERFACES)[],
+  interfaces: string | string[],
   supportedButNotRegistered = false
 ): void {
+  if(typeof interfaces === "string") {
+    // If checking a single interface, wrap it in an array
+    interfaces = [interfaces];
+  }
+
+  if (!interfaces.includes("ERC165")) {
+    // ERC165 is always required
+    interfaces.unshift("ERC165");
+  }
+
   describe("Contract interface", function () {
     beforeEach(function () {
-      this.contractUnderTest = this.mock || this.token || this.holder || this.nft;
+      this.contractUnderTest = this.mock || this.token || this.holder || this.nft || this.contract;
     });
 
     for (const interfaceName of interfaces) {
-      if (typeof interfaceName === "number") {
-        throw new Error("interfaces should be strings");
-      }
-
       const interfaceId = INTERFACE_IDS[interfaceName];
       describe(interfaceName, function () {
         describe("ERC165's supportsInterface(bytes4)", function () {
@@ -92,7 +93,7 @@ function makeInterfaceId(functionSignatures: string[]): string {
   const INTERFACE_ID_LENGTH = 4;
 
   const interfaceIdBuffer = functionSignatures
-    .map((signature) => ethers.utils.keccak256(signature))
+    .map((signature) => ethers.utils.keccak256(ethers.utils.toUtf8Bytes(signature)))
     .map(
       (h) => Buffer.from(h.substring(2), "hex").slice(0, 4) // bytes4()
     )
@@ -104,4 +105,5 @@ function makeInterfaceId(functionSignatures: string[]): string {
     }, Buffer.alloc(INTERFACE_ID_LENGTH));
 
   return `0x${interfaceIdBuffer.toString("hex")}`;
+  return "test";
 }
