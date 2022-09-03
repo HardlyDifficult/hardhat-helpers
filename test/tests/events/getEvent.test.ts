@@ -8,7 +8,6 @@ import { MockEvent, MockEvent__factory, MockEvents, MockEvents__factory } from "
 import { EventEvent } from "../../typechain/contracts/MockEvent";
 import { MultipleEvent } from "../../typechain/contracts/MockEvents";
 
-
 describe("expectAllEvents / expectEvents", () => {
   let mockEvent: MockEvent;
   let mockEvents: MockEvents;
