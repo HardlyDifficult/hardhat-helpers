@@ -3,10 +3,10 @@
     "id": "hardhat-helpers@0.1.21",
     "name": "hardhat-helpers",
     "version": "0.1.21",
-    "size": 31488,
-    "unpackedSize": 193158,
-    "shasum": "d9fc93ac1c6cf63d31ba4c314ec7063eda7e1b86",
-    "integrity": "sha512-Z0LZ4fY/miwxjq2Al5QYJ3MBnszyXwuq2E2HXOt3Mi+8BU+drb1+fojNvKizQjOB0PVDT90Y2VDB261Qs4vYfg==",
+    "size": 31426,
+    "unpackedSize": 192743,
+    "shasum": "c970bcbef2f46e70f057138ff1b475c23246cf30",
+    "integrity": "sha512-HooAwYIe1TdlQf0V9VdYnbh2em4dwFUcl0/dD+V7CPeGXcN7/WEc+Ibplesdnq36dVvnO00TvE1w/MRCV2VU4Q==",
     "filename": "hardhat-helpers-0.1.21.tgz",
     "files": [
       {
@@ -101,22 +101,22 @@
       },
       {
         "path": "dist/index.d.ts",
-        "size": 288,
+        "size": 321,
         "mode": 420
       },
       {
         "path": "dist/index.d.ts.map",
-        "size": 308,
+        "size": 331,
         "mode": 420
       },
       {
         "path": "dist/index.js",
-        "size": 1779,
+        "size": 1830,
         "mode": 420
       },
       {
         "path": "dist/index.js.map",
-        "size": 246,
+        "size": 259,
         "mode": 420
       },
       {
@@ -200,23 +200,43 @@
         "mode": 420
       },
       {
+        "path": "dist/testBehaviors/index.d.ts",
+        "size": 78,
+        "mode": 420
+      },
+      {
+        "path": "dist/testBehaviors/index.d.ts.map",
+        "size": 142,
+        "mode": 420
+      },
+      {
+        "path": "dist/testBehaviors/index.js",
+        "size": 851,
+        "mode": 420
+      },
+      {
+        "path": "dist/testBehaviors/index.js.map",
+        "size": 146,
+        "mode": 420
+      },
+      {
         "path": "dist/testBehaviors/shouldSupportInterfaces.d.ts",
-        "size": 298,
+        "size": 307,
         "mode": 420
       },
       {
         "path": "dist/testBehaviors/shouldSupportInterfaces.d.ts.map",
-        "size": 374,
+        "size": 405,
         "mode": 420
       },
       {
         "path": "dist/testBehaviors/shouldSupportInterfaces.js",
-        "size": 4507,
+        "size": 3672,
         "mode": 420
       },
       {
         "path": "dist/testBehaviors/shouldSupportInterfaces.js.map",
-        "size": 3129,
+        "size": 2624,
         "mode": 420
       },
       {
@@ -386,7 +406,7 @@
       },
       {
         "path": "src/index.ts",
-        "size": 253,
+        "size": 286,
         "mode": 420
       },
       {
@@ -410,8 +430,13 @@
         "mode": 420
       },
       {
+        "path": "src/testBehaviors/index.ts",
+        "size": 43,
+        "mode": 420
+      },
+      {
         "path": "src/testBehaviors/shouldSupportInterfaces.ts",
-        "size": 3916,
+        "size": 3388,
         "mode": 420
       },
       {
@@ -450,7 +475,7 @@
         "mode": 420
       }
     ],
-    "entryCount": 88,
+    "entryCount": 93,
     "bundled": []
   }
 ]

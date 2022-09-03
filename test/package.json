@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "build": "hardhat typechain",
     "lint": "yarn lint:prettier && yarn lint:solhint && yarn lint:eslint",
     "lint:prettier": "prettier --write \"**/*.{json,md,sol,yml,ts}\"",
     "lint:eslint": "eslint --fix --config ../.eslintrc.yaml --ignore-path ./.eslintignore --ext .ts .",
