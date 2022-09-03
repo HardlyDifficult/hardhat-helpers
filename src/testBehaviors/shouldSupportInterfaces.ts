@@ -1,8 +1,9 @@
 // Originally from https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-contracts-upgradeable/master/test/introspection/SupportsInterface.behavior.js
 import { expect } from "chai";
+import { Contract } from "ethers";
 import { ethers } from "hardhat";
 
-const INTERFACES: { [key: string]: string[] } = {
+export const INTERFACES: { [key: string]: string[] } = {
   ERC165: ["supportsInterface(bytes4)"],
   ERC721: [
     "balanceOf(address)",
@@ -32,16 +33,17 @@ const INTERFACES: { [key: string]: string[] } = {
   ERC2981: ["royaltyInfo(uint256,uint256)"],
 };
 
-export const INTERFACE_IDS: {[key: string]: string} = {};
-for (const k of Object.getOwnPropertyNames(INTERFACES)) {
-  INTERFACE_IDS[k] = makeInterfaceId(INTERFACES[k]);
-}
-
-export function shouldSupportInterfaces(
+export async function shouldSupportInterfaces(
+  contract: Contract,
   interfaces: string | string[],
   supportedButNotRegistered = false
-): void {
-  if(typeof interfaces === "string") {
+): Promise<void> {
+  const INTERFACE_IDS: { [key: string]: string } = {};
+  for (const k of Object.getOwnPropertyNames(INTERFACES)) {
+    INTERFACE_IDS[k] = makeInterfaceId(INTERFACES[k]);
+  }
+
+  if (typeof interfaces === "string") {
     // If checking a single interface, wrap it in an array
     interfaces = [interfaces];
   }
@@ -51,42 +53,28 @@ export function shouldSupportInterfaces(
     interfaces.unshift("ERC165");
   }
 
-  describe("Contract interface", function () {
-    beforeEach(function () {
-      this.contractUnderTest = this.mock || this.token || this.holder || this.nft || this.contract;
-    });
-
-    for (const interfaceName of interfaces) {
-      const interfaceId = INTERFACE_IDS[interfaceName];
-      describe(interfaceName, function () {
-        describe("ERC165's supportsInterface(bytes4)", function () {
-          it("uses less than 32k gas [skip-on-coverage]", async function () {
-            expect(await this.contractUnderTest.estimateGas.supportsInterface(interfaceId)).to.be.lte(32000);
-          });
-
-          it(
-            (supportedButNotRegistered ? "does not claim support" : "claims support") +
-              ` for ${interfaceName} (${interfaceId})`,
-            async function () {
-              if (supportedButNotRegistered) {
-                expect(await this.contractUnderTest.supportsInterface(interfaceId)).to.equal(false);
-              } else {
-                expect(await this.contractUnderTest.supportsInterface(interfaceId)).to.equal(true);
-              }
-            }
-          );
-        });
-
-        for (const fnName of INTERFACES[interfaceName]) {
-          describe(fnName, function () {
-            it("has to be implemented", function () {
-              expect(this.contractUnderTest.functions[fnName]).to.be.not.null;
-            });
-          });
-        }
-      });
+  for (const interfaceName of interfaces) {
+    const interfaceId = INTERFACE_IDS[interfaceName];
+    if (!interfaceId) {
+      throw new Error(`Unknown interface "${interfaceName}"`);
     }
-  });
+    expect(await contract.estimateGas.supportsInterface(interfaceId)).to.be.lte(
+      32000,
+      `${interfaceName} (${interfaceId}) uses more than 32k gas`
+    );
+    expect(await contract.supportsInterface(interfaceId)).to.equal(
+      !supportedButNotRegistered,
+      (supportedButNotRegistered ? "Unexpectedly claims support" : "Does not claim support") +
+        ` for "${interfaceName}" (${interfaceId})`
+    );
+
+    for (const fnName of INTERFACES[interfaceName]) {
+      expect(contract.functions[fnName]).not.to.eq(
+        null,
+        `${fnName} has to be implemented for ${interfaceName} (${interfaceId})`
+      );
+    }
+  }
 }
 
 function makeInterfaceId(functionSignatures: string[]): string {
@@ -105,5 +93,4 @@ function makeInterfaceId(functionSignatures: string[]): string {
     }, Buffer.alloc(INTERFACE_ID_LENGTH));
 
   return `0x${interfaceIdBuffer.toString("hex")}`;
-  return "test";
 }
