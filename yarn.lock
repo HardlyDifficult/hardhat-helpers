@@ -513,10 +513,10 @@
     deep-eql "^4.0.1"
     ordinal "^1.0.3"
 
-"@nomicfoundation/hardhat-network-helpers@1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@nomicfoundation/hardhat-network-helpers/-/hardhat-network-helpers-1.0.4.tgz#265e807818b727c50dc6f115ee951e5c25cfe67f"
-  integrity sha512-bgS1HtuPZxOzEsQsF6jxfoOMQXKRlddsoJPT8dBNH1Pgpv9Y8AUQ3ecQk4ujAw9EOdTE1xAL4u7S6Gu4p3DO+Q==
+"@nomicfoundation/hardhat-network-helpers@1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@nomicfoundation/hardhat-network-helpers/-/hardhat-network-helpers-1.0.5.tgz#99eb035c26b3f92711e58f3603a359b2e2bd9ba3"
+  integrity sha512-3QzbfPqGMp86ItoK1Ss4YKCDrWsTiUWd2OtKejxK58cVqZqfIq8EIlBfwW5qEtKK51iBV3j4RE6XmgCYK77Flw==
   dependencies:
     ethereumjs-util "^7.1.4"
 
@@ -2360,10 +2360,10 @@ eslint-plugin-no-only-tests@3.0.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-no-only-tests/-/eslint-plugin-no-only-tests-3.0.0.tgz#026cbc8cb069c8da6b7e19d03654be7ad49893f6"
   integrity sha512-I0PeXMs1vu21ap45hey4HQCJRqpcoIvGcNTPJe+UhUm8TwjQ6//mCrDqF8q0WS6LgmRDwQ4ovQej0AQsAHb5yg==
 
-eslint-plugin-simple-import-sort@7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-simple-import-sort/-/eslint-plugin-simple-import-sort-7.0.0.tgz#a1dad262f46d2184a90095a60c66fef74727f0f8"
-  integrity sha512-U3vEDB5zhYPNfxT5TYR7u01dboFZp+HNpnGhkDB2g/2E4wZ/g1Q9Ton8UwCLfRV9yAKyYqDh62oHOamvkFxsvw==
+eslint-plugin-simple-import-sort@8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-simple-import-sort/-/eslint-plugin-simple-import-sort-8.0.0.tgz#9d9a2372b0606e999ea841b10458a370a6ccc160"
+  integrity sha512-bXgJQ+lqhtQBCuWY/FUWdB27j4+lqcvXv5rUARkzbeWLwea+S5eBZEQrhnO+WgX3ZoJHVj0cn943iyXwByHHQw==
 
 eslint-scope@^4.0.3:
   version "4.0.3"
