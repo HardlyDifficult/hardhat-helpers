@@ -1,13 +1,13 @@
 [
   {
-    "id": "hardhat-helpers@0.1.26",
+    "id": "hardhat-helpers@0.1.27",
     "name": "hardhat-helpers",
-    "version": "0.1.26",
-    "size": 33322,
-    "unpackedSize": 201963,
-    "shasum": "9fa7ea5bdba31da9558f68d6ad17dfa83c5e6d60",
-    "integrity": "sha512-grLaQuUUjDx2Srdl9VxNghnbl5PTRaCj6T7YypkJ1V+o+4NnVy1Exq9QLNavJB7nz1WRgaV3E9luCOtaiem19w==",
-    "filename": "hardhat-helpers-0.1.26.tgz",
+    "version": "0.1.27",
+    "size": 34718,
+    "unpackedSize": 207265,
+    "shasum": "419aef098982a09b8ca1cf9caf2a2f58783e35b0",
+    "integrity": "sha512-TC4eipTjQ1dw7Jj72uUCXubPEn1JGdg5FmbayqO+ZWqYCPy/QEiinilCUXbUneoe7rGDnb0AyBJzHK4yJkHp/w==",
+    "filename": "hardhat-helpers-0.1.27.tgz",
     "files": [
       {
         "path": "LICENSE",
@@ -101,22 +101,22 @@
       },
       {
         "path": "dist/index.d.ts",
-        "size": 321,
+        "size": 353,
         "mode": 420
       },
       {
         "path": "dist/index.d.ts.map",
-        "size": 331,
+        "size": 354,
         "mode": 420
       },
       {
         "path": "dist/index.js",
-        "size": 1830,
+        "size": 1880,
         "mode": 420
       },
       {
         "path": "dist/index.js.map",
-        "size": 259,
+        "size": 272,
         "mode": 420
       },
       {
@@ -157,6 +157,46 @@
       {
         "path": "dist/mainnet/index.js.map",
         "size": 140,
+        "mode": 420
+      },
+      {
+        "path": "dist/preprocessor/index.d.ts",
+        "size": 80,
+        "mode": 420
+      },
+      {
+        "path": "dist/preprocessor/index.d.ts.map",
+        "size": 141,
+        "mode": 420
+      },
+      {
+        "path": "dist/preprocessor/index.js",
+        "size": 853,
+        "mode": 420
+      },
+      {
+        "path": "dist/preprocessor/index.js.map",
+        "size": 145,
+        "mode": 420
+      },
+      {
+        "path": "dist/preprocessor/preprocessorRemoveAsserts.d.ts",
+        "size": 377,
+        "mode": 420
+      },
+      {
+        "path": "dist/preprocessor/preprocessorRemoveAsserts.d.ts.map",
+        "size": 406,
+        "mode": 420
+      },
+      {
+        "path": "dist/preprocessor/preprocessorRemoveAsserts.js",
+        "size": 1013,
+        "mode": 420
+      },
+      {
+        "path": "dist/preprocessor/preprocessorRemoveAsserts.js.map",
+        "size": 918,
         "mode": 420
       },
       {
@@ -381,7 +421,7 @@
       },
       {
         "path": "package.json",
-        "size": 2345,
+        "size": 2490,
         "mode": 420
       },
       {
@@ -406,7 +446,7 @@
       },
       {
         "path": "src/index.ts",
-        "size": 286,
+        "size": 318,
         "mode": 420
       },
       {
@@ -417,6 +457,16 @@
       {
         "path": "src/mainnet/index.ts",
         "size": 23,
+        "mode": 420
+      },
+      {
+        "path": "src/preprocessor/index.ts",
+        "size": 45,
+        "mode": 420
+      },
+      {
+        "path": "src/preprocessor/preprocessorRemoveAsserts.ts",
+        "size": 1029,
         "mode": 420
       },
       {
@@ -475,7 +525,7 @@
         "mode": 420
       }
     ],
-    "entryCount": 93,
+    "entryCount": 103,
     "bundled": []
   }
 ]
