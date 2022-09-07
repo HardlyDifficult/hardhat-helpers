@@ -7,12 +7,13 @@ plugins:
   - "@typescript-eslint"
   - "no-only-tests"
   - "simple-import-sort"
+  - "unused-imports"
 root: true
 rules:
-  "@typescript-eslint/no-floating-promises":
-    - error
-  "@typescript-eslint/no-unused-vars":
-    - error
-  "no-only-tests/no-only-tests": "error"
-  "simple-import-sort/imports": "error"
-  "simple-import-sort/exports": "error"
+  "@typescript-eslint/no-floating-promises": "error"
+  "@typescript-eslint/no-unused-vars": "off" # Replaced by the unused-imports plugin
+  "unused-imports/no-unused-imports": "warn"
+  "unused-imports/no-unused-vars": "warn"
+  "no-only-tests/no-only-tests": "warn"
+  "simple-import-sort/imports": "warn"
+  "simple-import-sort/exports": "warn"
