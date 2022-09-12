@@ -3,10 +3,10 @@
     "id": "hardhat-helpers@0.1.26",
     "name": "hardhat-helpers",
     "version": "0.1.26",
-    "size": 33322,
+    "size": 33325,
     "unpackedSize": 201963,
-    "shasum": "9fa7ea5bdba31da9558f68d6ad17dfa83c5e6d60",
-    "integrity": "sha512-grLaQuUUjDx2Srdl9VxNghnbl5PTRaCj6T7YypkJ1V+o+4NnVy1Exq9QLNavJB7nz1WRgaV3E9luCOtaiem19w==",
+    "shasum": "ff60829f3fdf8e2a19b86ad8f714e29911079ab5",
+    "integrity": "sha512-Hblst/jf63f1h0+tzBQxVEy+Fb6hgDNAp9RsWBykpOXUPzX1BKw2JFAKk3Pw2Htf/Mhc78l1cbx9a0g36l58ag==",
     "filename": "hardhat-helpers-0.1.26.tgz",
     "files": [
       {
