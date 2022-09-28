@@ -69,8 +69,8 @@ describe("expectAllEvents / expectEvents", () => {
     snapshotEach(async () => {
       const proxy = await new Multicall__factory(alice).deploy();
       const data = (await mockEvent.populateTransaction.emitEvent()).data;
-      if(!data) throw new Error("No data");
-      tx = await proxy.call([{to: mockEvent.address, data}]);
+      if (!data) throw new Error("No data");
+      tx = await proxy.call([{ to: mockEvent.address, data }]);
     });
 
     it("getEvent from contract", async () => {
@@ -79,5 +79,5 @@ describe("expectAllEvents / expectEvents", () => {
       // TODO: How to get parse the event into the standard format when from another contract?
       // expect(event.event).to.eq("Event");
     });
-  })
+  });
 });
