@@ -1070,10 +1070,10 @@
   resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.7.tgz#63bb7d067db107cc1e457c303bc25d511febf6cb"
   integrity sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==
 
-"@types/readable-stream@4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@types/readable-stream/-/readable-stream-4.0.0.tgz#9bcb888b9c77478b02490365d3e0c34fd8b6d5ae"
-  integrity sha512-s6YqDV111kwuFsT9SwFC+FmZ5n1SEp4H9DXGg6Zqag0lPGeEvBGP9UaLJYpX4cxY7fAFnx2avy1QVvft0LLb7g==
+"@types/readable-stream@4.0.5":
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/@types/readable-stream/-/readable-stream-4.0.5.tgz#7a82f920748f81e6f6e6d062d6d3961e5731b296"
+  integrity sha512-QzFG+b0/vKI8myBgHhUja5C8ZJr4vaAeSXNYbqedm3Pr8byTgkNf1OC2/16yQTn2H2ZpQpHr7sLKS13XWpKaCQ==
   dependencies:
     "@types/node" "*"
     safe-buffer "~5.1.1"
