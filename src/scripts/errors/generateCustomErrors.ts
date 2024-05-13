@@ -33,6 +33,8 @@ export function generateCustomErrorsFile(contracts: ContractDefinition[]): strin
     name: string;
     type: string;
   }[];
+  reason?: string;
+  description?: string;
 };
 
 export const ContractErrorsByName = {
@@ -40,14 +42,14 @@ export const ContractErrorsByName = {
   for (const error of allCustomErrors) {
     file += dumpError(error, { keyBy: "errorName" });
   }
-  file += `};
+  file += `} as const;
 
 export const ContractErrorsBySignature = {
 `;
   for (const error of allCustomErrors) {
     file += dumpError(error, { keyBy: "errorCode" });
   }
-  file += `};\n`;
+  file += `} as const;\n`;
   return file;
 }
 
@@ -62,6 +64,8 @@ function loadCustomErrors(contract: ContractDefinition): CustomContractError[] {
       name: errorFragment.name,
       errorCode: ethers.utils.id(errorFragment.format("sighash")).substring(0, 10),
       params: errorFragment.inputs,
+      reason: "todo",
+      description: "todo",
     });
   }
   return customErrors;
@@ -79,6 +83,12 @@ function dumpError(error: CustomContractError, options: CustomErrorFileOptions):
       results += `      { name: "${param.name}", type: "${param.type}" },\n`;
     }
     results += `    ],\n`;
+  }
+  if(error.reason) {
+    results += `    reason: "${error.reason}",\n`;
+  }
+  if(error.description) {
+    results += `    description: "${error.description}",\n`;
   }
 
   results += `  },\n`;

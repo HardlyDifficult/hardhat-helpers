@@ -7,6 +7,8 @@ export type CustomContractError = {
     name: string;
     type: string;
   }[];
+  reason?: string;
+  description?: string;
 };
 
 export const ContractErrorsByName = {
@@ -14,6 +16,8 @@ export const ContractErrorsByName = {
     contractName: "CustomErrors",
     name: "CustomErrors_Test_1",
     errorCode: "0x730b17c8",
+    reason: "Test custom error 1",
+    description: "This is a test function to check the output of custom error 1",
   },
   CustomErrors_Test_2: {
     contractName: "CustomErrors",
@@ -42,7 +46,7 @@ export const ContractErrorsByName = {
       { name: "c", type: "uint256" },
     ],
   },
-};
+} as const;
 
 export const ContractErrorsBySignature = {
   "0x730b17c8": {
@@ -77,4 +81,4 @@ export const ContractErrorsBySignature = {
       { name: "c", type: "uint256" },
     ],
   },
-};
+} as const;
