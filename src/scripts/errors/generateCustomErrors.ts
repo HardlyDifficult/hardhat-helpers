@@ -59,7 +59,7 @@ function loadCustomErrors(contract: ContractDefinition): CustomContractError[] {
 
   const artifact = artifacts.readArtifactSync(contractName)
   const buildInfo = artifacts.getBuildInfoSync(`${artifact.sourceName}:${artifact.contractName}`)
-  const metadataOutput = JSON.parse(buildInfo?.output.contracts[artifact.sourceName][artifact.contractName].metadata).output;
+  const metadataOutput = JSON.parse((buildInfo?.output.contracts[artifact.sourceName][artifact.contractName] as any).metadata).output;
   
   for (const entry of contract.abi) {
     if (entry.type !== "error") continue;
