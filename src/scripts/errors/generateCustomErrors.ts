@@ -29,7 +29,7 @@ export function generateCustomErrorsFile(contracts: ContractDefinition[]): strin
   contractName: string;
   name: string;
   errorCode: string;
-  params?: {
+  params?: readonly {
     name: string;
     type: string;
   }[];
