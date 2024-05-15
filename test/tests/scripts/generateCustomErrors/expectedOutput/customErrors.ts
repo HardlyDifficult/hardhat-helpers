@@ -53,6 +53,8 @@ export const ContractErrorsBySignature = {
     contractName: "CustomErrors",
     name: "CustomErrors_Test_1",
     errorCode: "0x730b17c8",
+    reason: "Test custom error 1",
+    description: "This is a test function to check the output of custom error 1",
   },
   "0x11b1f88a": {
     contractName: "CustomErrors",

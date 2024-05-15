@@ -1,4 +1,4 @@
-import { ethers } from "hardhat";
+import { artifacts, ethers } from "hardhat";
 
 import { ContractDefinition, CustomContractError } from "./types";
 
@@ -56,18 +56,25 @@ export const ContractErrorsBySignature = {
 function loadCustomErrors(contract: ContractDefinition): CustomContractError[] {
   const customErrors: CustomContractError[] = [];
   const contractName = contract.name.substring(0, contract.name.length - 9); // Remove "__factory" from the end
+
+  const artifact = artifacts.readArtifactSync(contractName)
+  const buildInfo = artifacts.getBuildInfoSync(`${artifact.sourceName}:${artifact.contractName}`)
+  const metadataOutput = JSON.parse(buildInfo?.output.contracts[artifact.sourceName][artifact.contractName].metadata).output;
+  
   for (const entry of contract.abi) {
     if (entry.type !== "error") continue;
     const errorFragment = ethers.utils.ErrorFragment.from(entry);
+    const errorSignature = errorFragment.format("sighash");
     customErrors.push({
       contractName,
       name: errorFragment.name,
-      errorCode: ethers.utils.id(errorFragment.format("sighash")).substring(0, 10),
+      errorCode: ethers.utils.id(errorSignature).substring(0, 10),
       params: errorFragment.inputs,
-      reason: "todo",
-      description: "todo",
+      reason: metadataOutput.userdoc.errors?.[errorSignature]?.[0]?.notice,
+      description: metadataOutput.devdoc.errors?.[errorSignature]?.[0]?.details,
     });
   }
+
   return customErrors;
 }
 
