@@ -32,10 +32,10 @@ export const ContractErrorsByName = {
   CustomErrors_Test_3: {
     contractName: "CustomErrors",
     name: "CustomErrors_Test_3",
-    errorCode: "0xd3c4fb90",
+    errorCode: "0x8b8a2201",
     params: [
       { name: "a", type: "uint256" },
-      { name: "b", type: "uint256" },
+      { name: "b", type: "address" },
     ],
   },
   CustomErrors_Test_4: {
@@ -71,10 +71,10 @@ export const ContractErrorsBySignature = {
   "0xd3c4fb90": {
     contractName: "CustomErrors",
     name: "CustomErrors_Test_3",
-    errorCode: "0xd3c4fb90",
+    errorCode: "0x8b8a2201",
     params: [
       { name: "a", type: "uint256" },
-      { name: "b", type: "uint256" },
+      { name: "b", type: "address" },
     ],
   },
   "0xa2e67f32": {
