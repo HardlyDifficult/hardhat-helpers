@@ -68,7 +68,7 @@ export const ContractErrorsBySignature = {
     reason: "reason added",
     description: "description added",
   },
-  "0xd3c4fb90": {
+  "0x8b8a2201": {
     contractName: "CustomErrors",
     name: "CustomErrors_Test_3",
     errorCode: "0x8b8a2201",
