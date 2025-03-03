@@ -48,7 +48,7 @@
     "eslint-plugin-simple-import-sort": "12.1.1",
     "ethers": "5.8.0",
     "fs": "0.0.1-security",
-    "hardhat": "2.19.5",
+    "hardhat": "2.22.19",
     "hardhat-gas-reporter": "1.0.10",
     "hardhat-tracer": "2.7.0",
     "mocha": "11.1.0",
