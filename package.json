@@ -55,7 +55,7 @@
     "prettier": "3.5.3",
     "prettier-plugin-solidity": "1.4.2",
     "solhint": "5.0.5",
-    "solidity-coverage": "0.8.14",
+    "solidity-coverage": "0.8.15",
     "ts-node": "10.9.2",
     "tsc": "2.0.4",
     "typechain": "8.3.2",
