@@ -826,6 +826,11 @@
   resolved "https://registry.yarnpkg.com/@solidity-parser/parser/-/parser-0.19.0.tgz#37a8983b2725af9b14ff8c4a475fa0e98d773c3f"
   integrity sha512-RV16k/qIxW/wWc+mLzV3ARyKUaMUTBy9tOLMzFhtNSKYeTAanQ3a5MudJKf/8arIFnA2L27SNjarQKmFg0w/jA==
 
+"@solidity-parser/parser@^0.20.1":
+  version "0.20.1"
+  resolved "https://registry.yarnpkg.com/@solidity-parser/parser/-/parser-0.20.1.tgz#88efee3e0946a4856ed10355017692db9c259ff4"
+  integrity sha512-58I2sRpzaQUN+jJmWbHfbWf9AKfzqCI8JAdFB0vbyY+u8tBRcuTt9LxzasvR0LGQpcRv97eyV7l61FQ3Ib7zVw==
+
 "@szmarczak/http-timer@^5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@szmarczak/http-timer/-/http-timer-5.0.1.tgz#c7c1bf1141cdd4751b0399c8fc7b8b664cd5be3a"
@@ -4688,13 +4693,13 @@ solhint@5.0.5:
   optionalDependencies:
     prettier "^2.8.3"
 
-solidity-coverage@0.8.14:
-  version "0.8.14"
-  resolved "https://registry.yarnpkg.com/solidity-coverage/-/solidity-coverage-0.8.14.tgz#db9bfcc10e3bc369fc074b35b267d665bcc6ae2e"
-  integrity sha512-ItAAObe5GaEOp20kXC2BZRnph+9P7Rtoqg2mQc2SXGEHgSDF2wWd1Wxz3ntzQWXkbCtIIGdJT918HG00cObwbA==
+solidity-coverage@0.8.16:
+  version "0.8.16"
+  resolved "https://registry.yarnpkg.com/solidity-coverage/-/solidity-coverage-0.8.16.tgz#ae07bb11ebbd78d488c7e1a3cd15b8210692f1c9"
+  integrity sha512-qKqgm8TPpcnCK0HCDLJrjbOA2tQNEJY4dHX/LSSQ9iwYFS973MwjtgYn2Iv3vfCEQJTj5xtm4cuUMzlJsJSMbg==
   dependencies:
     "@ethersproject/abi" "^5.0.9"
-    "@solidity-parser/parser" "^0.19.0"
+    "@solidity-parser/parser" "^0.20.1"
     chalk "^2.4.2"
     death "^1.1.0"
     difflib "^0.2.4"
